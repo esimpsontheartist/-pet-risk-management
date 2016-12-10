@@ -38,9 +38,9 @@ lightwallet.keystore.deriveKeyFromPassword(password, function(err, pwDerivedKey)
 });
 
 /* GET users listing. */
-router.get('/balances', function(req, res, next) {
-	async.map(addresses, web3.eth.getBalance, function(err, balances) {
-  		res.status(200).json({status:"ok", addresses: addresses, balances: balances});
+router.get('/balance', function(req, res, next) {
+	web3.eth.getBalance(addresses[0], function(err, balance) {
+  		res.status(200).json({status:"ok", address: addresses[0], balances: balance});
   	});
 });
 
