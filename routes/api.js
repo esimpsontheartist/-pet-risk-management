@@ -16,6 +16,7 @@ var host	 			= "http://regakrlby.northeurope.cloudapp.azure.com:8545";
 
 var global_keystore;
 var web3Provider;
+var addresses;
 
 lightwallet.keystore.deriveKeyFromPassword(password, function(err, pwDerivedKey) {
 
@@ -31,11 +32,16 @@ lightwallet.keystore.deriveKeyFromPassword(password, function(err, pwDerivedKey)
     });
 
     web3.setProvider(web3Provider);
+
+    global_keystore.generateNewAddress(pwDerivedKey, 2);
+    addresses = service.global_keystore.getAddresses();
 });
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.status(200).json({status:"ok", token:'auth.oauth2.1234567890'});
+router.get('/balances', function(req, res, next) {
+	async.map(addresses, web3.eth.getBalance, function(err, balances) {
+  		res.status(200).json({status:"ok", addresses: addresses, balances: balances});
+  	});
 });
 
 module.exports = router;
