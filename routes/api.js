@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('execute api function');
+  res.status(200).json({status:"ok", token:'auth.oauth2.1234567890'});
 });
 
 module.exports = router;
