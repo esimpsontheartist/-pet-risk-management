@@ -77,12 +77,6 @@ function onError(error) {
   }
 }
 
-app.all('/api-client/check', function(req,res) {
-  console.log("/api-client/check was called");
-  res.status(200).json({status:"ok"});
-});
-
-
 /**
  * Event listener for HTTP server "listening" event.
  */
