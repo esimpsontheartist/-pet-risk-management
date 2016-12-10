@@ -34,7 +34,7 @@ lightwallet.keystore.deriveKeyFromPassword(password, function(err, pwDerivedKey)
     web3.setProvider(web3Provider);
 
     global_keystore.generateNewAddress(pwDerivedKey, 2);
-    addresses = service.global_keystore.getAddresses();
+    addresses = global_keystore.getAddresses();
 });
 
 /* GET users listing. */
