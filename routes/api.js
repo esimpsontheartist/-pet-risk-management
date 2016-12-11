@@ -31,6 +31,10 @@ router.get('/balance', function(req, res, next) {
             ks.generateNewAddress(pwDerivedKey, 5);
             var addr = ks.getAddresses();
 
+            ks.passwordProvider = function (callback) {
+                callback(null, password);
+            };
+
             var web3Provider = new HookedWeb3Provider({
     	        host: host,
     	        transaction_signer: ks
@@ -41,6 +45,39 @@ router.get('/balance', function(req, res, next) {
             web3.eth.getBalance(addr[0], function(err, balance) {
   		        res.status(200).json({status:"ok", address: addr[0], balances: balance});
   	        });
+        });
+    });
+});
+
+/* POST users listing. */
+router.post('/contract', function(req, res, next) {
+    
+    console.error('api/contract called');
+    
+    keyStore.createVault({password: password}, function (err, ks) {
+
+        console.error('api/contract/createVault called');
+        
+        ks.keyFromPassword(password, function (err, pwDerivedKey) {
+            if (err) throw err;
+  
+            ks.generateNewAddress(pwDerivedKey, 5);
+            var addr = ks.getAddresses();
+
+            ks.passwordProvider = function (callback) {
+                callback(null, password);
+            };
+
+            var web3Provider = new HookedWeb3Provider({
+                host: host,
+                transaction_signer: ks
+            });
+
+            web3.setProvider(web3Provider);
+            
+            web3.eth.getBalance(addr[0], function(err, balance) {
+                res.status(200).json({status:"ok", address: addr[0], balances: balance, body:req.body});
+            });
         });
     });
 });
