@@ -27,11 +27,11 @@ router.get('/balance', function(req, res, next) {
 
         var web3Provider = new HookedWeb3Provider({
     	    host: host,
-    	    transaction_signer: global_keystore
+    	    transaction_signer: keystore
         });
 
         web3.setProvider(web3Provider);
-        
+
         keystore.generateNewAddress(pwDerivedKey, 2);
         var addresses = keystore.getAddresses();
 
