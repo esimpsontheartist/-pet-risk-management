@@ -44,7 +44,7 @@ router.get('/contract', function(req, res, next) {
             web3.setProvider(web3Provider);
 
             var contract = web3.eth.contract(abi);
-            var instance = contract.at([contractAddr]);
+            var instance = contract.at(contractAddr);
 
             var gas         = 5000000;
             var gasPrice    = web3.toWei(20, "gwei");
@@ -60,7 +60,7 @@ router.get('/contract', function(req, res, next) {
 });
 
 /* GET users listing. */
-router.post('/balance', function(req, res, next) {
+router.get('/balance', function(req, res, next) {
     
     console.error('api/balance called');
     
