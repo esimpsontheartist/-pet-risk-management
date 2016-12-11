@@ -17,7 +17,11 @@ var host	 			= "http://rega53j4n.eastus.cloudapp.azure.com:8545";
 
 /* GET users listing. */
 router.get('/balance', function(req, res, next) {
+    console.error('api/balance called');
+    
     lightwallet.keystore.deriveKeyFromPassword(password, function(err, pwDerivedKey) {
+
+        console.error('api/balance/lightwallet.keystore.deriveKeyFromPassword called');
         
         var keystore = new lightwallet.keystore(seed, pwDerivedKey);
         
