@@ -43,7 +43,7 @@ router.get('/balance', function(req, res, next) {
             web3.setProvider(web3Provider);
             
             web3.eth.getBalance(addr[0], function(err, balance) {
-  		        res.status(200).json({status:"ok", address: addr[0], balances: balance});
+  		        res.status(200).json({status:"ok", address: addr[0], balances: balance, query:req.query});
   	        });
         });
     });
