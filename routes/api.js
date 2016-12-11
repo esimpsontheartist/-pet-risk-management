@@ -14,34 +14,31 @@ var password 			= "!ReGa!2016";
 var seed 	 			= "ReGa Risk Sharing Pet risk manager project";
 var host	 			= "http://regakrlby.northeurope.cloudapp.azure.com:8545";
 
-var global_keystore;
-var web3Provider;
-var addresses;
-
-lightwallet.keystore.deriveKeyFromPassword(password, function(err, pwDerivedKey) {
-
-	global_keystore = new lightwallet.keystore(seed, pwDerivedKey);
-    
-    global_keystore.passwordProvider = function (callback) {
-    	callback(null, password);
-    };
-
-    web3Provider = new HookedWeb3Provider({
-    	host: host,
-    	transaction_signer: global_keystore
-    });
-
-    web3.setProvider(web3Provider);
-
-    global_keystore.generateNewAddress(pwDerivedKey, 2);
-    addresses = global_keystore.getAddresses();
-});
 
 /* GET users listing. */
 router.get('/balance', function(req, res, next) {
-	web3.eth.getBalance(addresses[0], function(err, balance) {
-  		res.status(200).json({status:"ok", address: addresses[0], balances: balance});
-  	});
+    lightwallet.keystore.deriveKeyFromPassword(password, function(err, pwDerivedKey) {
+        
+        var keystore = new lightwallet.keystore(seed, pwDerivedKey);
+        
+        keystore.passwordProvider = function (callback) {
+    	    callback(null, password);
+        };
+
+        var web3Provider = new HookedWeb3Provider({
+    	    host: host,
+    	    transaction_signer: global_keystore
+        });
+
+        web3.setProvider(web3Provider);
+        
+        keystore.generateNewAddress(pwDerivedKey, 2);
+        var addresses = keystore.getAddresses();
+
+	    web3.eth.getBalance(addresses[0], function(err, balance) {
+  		    res.status(200).json({status:"ok", address: addresses[0], balances: balance});
+  	    });
+    });
 });
 
 module.exports = router;
