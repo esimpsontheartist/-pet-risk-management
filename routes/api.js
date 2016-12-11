@@ -8,7 +8,7 @@ var lightwallet 		= require('eth-lightwallet');
 var txutils 			= lightwallet.txutils;
 var signing 			= lightwallet.signing;
 var encryption 			= lightwallet.encryption;
-var keyStore            = ightwallet.keystore;
+var keyStore            = lightwallet.keystore;
 var HookedWeb3Provider 	= require("hooked-web3-provider");
 
 var password 			= "!ReGa!2016";
