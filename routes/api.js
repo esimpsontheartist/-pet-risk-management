@@ -12,7 +12,7 @@ var HookedWeb3Provider 	= require("hooked-web3-provider");
 
 var password 			= "!ReGa!2016";
 var seed 	 			= "ReGa Risk Sharing Pet risk manager project";
-var host	 			= "http://regakrlby.northeurope.cloudapp.azure.com:8545";
+var host	 			= "http://rega53j4n.eastus.cloudapp.azure.com:8545";
 
 
 /* GET users listing. */
