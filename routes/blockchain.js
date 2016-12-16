@@ -84,7 +84,7 @@ var blockchain = function() {};
         var contract    = web3.eth.contract(abi);
         var instance    = contract.at(contractAddr);
 
-        var gas         = 5000000;
+        var gas         = 500000;
         var gasPrice    = web3.toWei(20, "gwei");
         var address     = acc;
         var value       = web3.toWei(parseInt(amount), "ether");
