@@ -6,9 +6,12 @@ var blockchain = require("./blockchain");
 /* GET users listing. */
 router.get('/contract', function(req, res, next) {
     
+    var address = "0x6cd0f3b9e9e3191dfef4c5f1572e4ca0cbfb4f3c";
     console.info('api/contract called');
-    
-    res.status(200).json({status:"ok", address: "0x6cd0f3b9e9e3191dfef4c5f1572e4ca0cbfb4f3c", balances: "1000000", query:req.query});
+
+    blockchain.getBalance(address, function(balance) {
+        res.status(200).json({status:"ok", address: address, balances: balance, query:req.query});
+    });
 });
         
 
