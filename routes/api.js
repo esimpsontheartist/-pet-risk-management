@@ -35,4 +35,16 @@ router.get('/balance', function(req, res, next) {
     });
 });
 
+router.get('/invest', function(req, res, next) {
+    
+    var amount = req.query.amount;
+
+    console.info('api/invest called with amount', amount);
+
+    blockchain.invest(amount, function(balance){
+        console.info('blockchain.invest result: ' + balance);
+        res.status(200).json({status:"ok", address: addr[0], balances: balance, query:req.query});
+    });                
+});
+
 module.exports = router;

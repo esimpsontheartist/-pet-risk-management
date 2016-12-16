@@ -64,10 +64,40 @@ var blockchain = function() {};
 
     blockchain.prototype.getAccount = function(accId) {
         
+        if(this.addr == null)
+            throw new Error('getAccount: accounts is null');
+        if(this.addr.length == 0)
+            throw new Error('getAccount: accounts is empty');
+
         if(accId < 0 || accId >= this.addr.length) {
             throw new Error('getAccount: Invalid account ID - out of range');
         }
         return this.addr[accId];
+    };
+
+    blockchain.prototype.invest = function(amount, success) {
+        
+        if(web3 == null)
+            throw new Error('invest: Web3 provider is null');
+        if(this.addr == null)
+            throw new Error('invest: accounts is null');
+        if(this.addr.length == 0)
+            throw new Error('invest: accounts is empty');
+
+        var contract    = web3.eth.contract(abi);
+        var instance    = contract.at(contractAddr);
+
+        var gas         = 5000000;
+        var gasPrice    = web3.toWei(20, "gwei");
+        var address     = this.addr[0];
+        var value       = web3.toWei(parseInt(amount), "ether");
+
+         instance.invest.sendTransaction(value, {gas: gas, gasPrice: gasPrice, value: value, from: address}, function(err, balance) {
+             if (err) 
+                throw err;
+             else
+                success(balance);
+         });
     };
 
 module.exports = new blockchain();
