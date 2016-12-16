@@ -25,6 +25,8 @@ var blockchain = function() {};
             
             this.kstore = ks;
 
+            console.info("blockchain.createAccounts.createVault seed [" + seed + "]");
+
             this.kstore.keyFromPassword(pswd, function (err, pwDerivedKey) {
                 if (err) throw err;
 
