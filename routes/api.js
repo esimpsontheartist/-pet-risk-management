@@ -7,10 +7,24 @@ var blockchain = require("./blockchain");
 router.get('/contract', function(req, res, next) {
     
     var address = "0x6cd0f3b9e9e3191dfef4c5f1572e4ca0cbfb4f3c";
+    
     console.info('api/contract called');
 
-    blockchain.getBalance(address, function(balance) {
-        res.status(200).json({status:"ok", address: address, balances: balance, query:req.query});
+    blockchain.createAccounts(function(addr) {
+
+        console.info('blockchain.createAccounts called.');
+        
+        if(addr) {
+            if(Array.isArray(addr)) {
+                if(addr.length > 0) {
+                    console.info('blockchain.getBalance is about to call for account: ' + address);
+                    blockchain.getBalance(address, function(balance){
+                        console.info('blockchain.getBalance result: ' + balance);
+                        res.status(200).json({status:"ok", address: address, balances: balance, query:req.query});
+                    });
+                }
+            }
+        }
     });
 });
         
