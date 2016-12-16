@@ -1,4 +1,5 @@
 var Web3                = require('web3');
+var web3                = new Web3();
 
 var lightwallet         = require('eth-lightwallet');
 var HookedWeb3Provider  = require("hooked-web3-provider");
@@ -16,7 +17,6 @@ var blockchain = function() {};
     blockchain.addr     = [];
     blockchain.kstore   = null;
     blockchain.provider = null;
-    blockchain.web3     = null;
     
     blockchain.prototype.createAccounts = function(success) {
        
@@ -42,9 +42,7 @@ var blockchain = function() {};
     	            transaction_signer: this.kstore
                 });
 
-                this.web3 = new Web3();
-
-                this.web3.setProvider(this.provider);
+                web3.setProvider(this.provider);
 
                 success(this.addr);
             });
@@ -53,10 +51,10 @@ var blockchain = function() {};
 
     blockchain.prototype.getBalance = function(acc, success) {
 
-        if(this.web3 == null)
+        if(web3 == null)
             throw new Error('getBalance: Web3 provider is null');
 
-        this.web3.eth.getBalance(acc, function(err, balance) {
+        web3.eth.getBalance(acc, function(err, balance) {
              if (err) 
                 throw err;
              else
