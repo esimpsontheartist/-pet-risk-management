@@ -38,17 +38,25 @@ router.get('/balance', function(req, res, next) {
 router.get('/invest', function(req, res, next) {
     
     var amount = req.query.amount;
+    
     console.info('api/invest called with amount', amount);
     
     blockchain.createAccounts(function(addr) {
-        
-        console.info('blockchain.createAccounts called.');
 
-        blockchain.invest(amount, function(balance){
-            console.info('blockchain.invest result: ' + balance);
-            res.status(200).json({status:"ok", address: addr[0], balances: balance, query:req.query});
-        });
-     });                
+        console.info('blockchain.createAccounts called.');
+        
+        if(addr) {
+            if(Array.isArray(addr)) {
+                if(addr.length > 0) {
+                    console.info('blockchain.invest is about to call for account: ' + addr[0]);
+                    blockchain.invest(amount, function(balance){
+                        console.info('blockchain.getBalance result: ' + balance);
+                        res.status(200).json({status:"ok", address: addr[0], balances: balance, query:req.query});
+                    });
+                }
+            }
+        }
+    });               
 });
 
 module.exports = router;
