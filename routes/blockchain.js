@@ -89,11 +89,11 @@ var blockchain = function() {};
         var address     = acc;
         var value       = web3.toWei(parseInt(amount), "ether");
 
-         instance.invest.sendTransaction(value, {gas: gas, gasPrice: gasPrice, value: value, from: address}, function(err, balance) {
+         instance.invest.sendTransaction(value, {gas: gas, gasPrice: gasPrice, value: value, from: address}, function(err, tnx) {
              if (err) 
                 throw err;
              else
-                success(balance);
+                success(tnx);
          });
     };
 

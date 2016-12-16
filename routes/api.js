@@ -49,9 +49,9 @@ router.get('/invest', function(req, res, next) {
             if(Array.isArray(addr)) {
                 if(addr.length > 0) {
                     console.info('blockchain.invest is about to call for account: ' + addr[0]);
-                    blockchain.invest(addr[0], amount, function(balance) {
-                        console.info('blockchain.getBalance result: ' + balance);
-                        res.status(200).json({status:"ok", address: addr[0], balances: balance, query:req.query});
+                    blockchain.invest(addr[0], amount, function(tnx) {
+                        console.info('blockchain.getBalance result: ' + tnx);
+                        res.status(200).json({status:"ok", address: addr[0], transaction: tnx, query:req.query});
                     });
                 }
             }
