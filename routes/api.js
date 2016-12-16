@@ -19,7 +19,7 @@ router.get('/balance', function(req, res, next) {
     
     blockchain.createAccounts(function(addr) {
 
-        console.info('blockchain.createAccounts called. Accounts');
+        console.info('blockchain.createAccounts called.');
         
         if(addr) {
             if(Array.isArray(addr)) {
@@ -38,13 +38,17 @@ router.get('/balance', function(req, res, next) {
 router.get('/invest', function(req, res, next) {
     
     var amount = req.query.amount;
-
     console.info('api/invest called with amount', amount);
+    
+    blockchain.createAccounts(function(addr) {
+        
+        console.info('blockchain.createAccounts called.');
 
-    blockchain.invest(amount, function(balance){
-        console.info('blockchain.invest result: ' + balance);
-        res.status(200).json({status:"ok", address: addr[0], balances: balance, query:req.query});
-    });                
+        blockchain.invest(amount, function(balance){
+            console.info('blockchain.invest result: ' + balance);
+            res.status(200).json({status:"ok", address: addr[0], balances: balance, query:req.query});
+        });
+     });                
 });
 
 module.exports = router;

@@ -5,7 +5,8 @@ var lightwallet         = require('eth-lightwallet');
 var HookedWeb3Provider  = require("hooked-web3-provider");
 
 var keyStore            = lightwallet.keystore;
-var seed                = keyStore.generateRandomSeed();
+// var seed             = keyStore.generateRandomSeed();
+var seed                = "fuel govern lady blast ceiling zone long trigger session hat cupboard grass";
 var host                = "http://rega53j4n.eastus.cloudapp.azure.com:8545";
 var pswd                = "!ReGa!2016";
 var contractAddr        = "0x6cd0f3b9e9e3191dfef4c5f1572e4ca0cbfb4f3c";
