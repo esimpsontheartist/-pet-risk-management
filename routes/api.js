@@ -6,8 +6,8 @@ var blockchain = require("./blockchain");
 /* GET users listing. */
 router.get('/contract', function(req, res, next) {
     
-    var address = "0x6cd0f3b9e9e3191dfef4c5f1572e4ca0cbfb4f3c";
-    
+    var address = "0x8d7b8def6c70a78a7d08ae9c036f907dca009d4f";
+
     console.info('api/contract called');
 
     blockchain.createAccounts(function(addr) {
