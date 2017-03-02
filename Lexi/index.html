@@ -1,0 +1,766 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Mutual Pet Health Insurance on Ethereum platform">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Lexi Pet Care</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_purple-pink.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+          <div>
+            <img src="images/Lexi.png">
+            <h4 id="logo-h4">Lexi Club - taking care together!</h4>
+          </div>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+          <a href="#overview" class="mdl-layout__tab is-active">Лекси</a>
+          <a href="#stories" class="mdl-layout__tab">Истории</a>
+          <a href="#features" class="mdl-layout__tab">Правила</a>
+          <a href="#technology" class="mdl-layout__tab">Технология</a>
+          <a href="#faq" class="mdl-layout__tab">FAQ</a>
+          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
+            <i class="material-icons" role="presentation">add</i>
+            <span class="visuallyhidden">Add</span>
+          </button>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="overview">
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <img src="images/db-logo.png">
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Лекси помогает заботиться о вашем питомце</h4>
+                <p>Подберет лучшего ветеринара и организует консультацию он-лайн. Возместит до 80% от стоимости ветеринарных услуг если с вашей кошкой или собакой произошел несчастный случай или она заболела.</p>
+                <p>Все просто и безлишних формальностей - 90 секунд на заключение контракта, 90 минут на получение возмещения</p>
+              </div>
+              <div class="mdl-card__actions">
+                <a href="#conditions" class="mdl-button">Узнать больше</a>
+              </div>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
+              <i class="material-icons">more_vert</i>
+            </button>
+          </section>
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div id="conditions" class="mdl-card__supporting-text mdl-grid mdl-grid--no-spacing">
+                <h4 class="mdl-cell mdl-cell--12-col">Условия</h4>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Сколько стоит?</h5>
+                  <p>Стоимость подписки в квартал: 999₽ - собака, 867₽ - кошка <a href="#">внести</a>.</p>
+                </div>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Что получаем?</h5>
+                  <p>Если с вашим питомцем произойдет несчастный случай или он заболеет вам оплатят до 80% от стоимости ветеринарных услуг по <a href="#">списку</a>, на сумму не более 30,000 руб. и не более 10,000 руб. за один визит. Оплата компенсации в день обращения.</p>
+                  <p>Нужно подобрать клинику или прокосультироваться с ветеринаром, Лекси поможет это организовать</p>
+                </div>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>О ком заботимся?</h5>
+                   <p>Собака или кошка любой породы, возраст с 4 недель до 8 лет <a href="#">есть исключения</a>.</p>
+                </div>
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <div class="section__circle-container__circle mdl-color--primary"></div>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Как начать?</h5>
+                   <p>"Усы, лапы и хвост - вот мои документы!"© - сфотографируйте Вашего питомца и загрузите фотографию в программу Lexi Bot <a href="#">загрузить</a>.</p>
+                </div>
+              </div>
+              <div class="mdl-card__actions">
+                <a href="#" class="mdl-button">Узнать больше</a>
+              </div>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
+              <i class="material-icons">more_vert</i>
+            </button>
+          </section>
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+              <div class="mdl-card__supporting-text">
+                <h4>Технология</h4>
+                Сервис Лекси организован на основе Автономной Децентрализованной Организации (DAO) на платформе <a href="https://www.ethereum.org">Ethereum</a>.<br><br> Умный контракт Лекси - это программа, которая выполняется на виртуальной машине (компьютере) Ethereum. Лекси может "видить" Вашего питомца, определить кошка это или собака и "узнать" его, на пример, когда он придет лечится в ветеринарную клинику.<br><br> Лекси использует специальную вероятностную модель, постоенную на основе проанализированных демографии и фотографий людей и животных. Эта модель позволяет Лекси "предсказывать" возможные будущие события, например болезь опрелеленной породы питомца или нарушение Правил владельцем.
+              </div>
+              <div class="mdl-card__actions">
+                <a href="#technology" class="mdl-button">Узнать больше</a>
+              </div>
+            </div>
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+              <i class="material-icons">more_vert</i>
+            </button>
+          </section>
+          <section class="section--footer mdl-color--white mdl-grid">
+            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+              <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
+            </div>
+            <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+              <h5>Как Лекси помогла Зеусу</h5>
+              Лабрадора Зеуса сильно покусала бойцовая собака во время прогулки. Пришлось делать операцию и зашивать рану на шее. Лекси перечислила на счет хозяина Зеуса 16,000 рублей, чтобы покрыть расходы на операцию и лечение. 
+            </div>
+            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+              <div class="section__circle-container__circle mdl-color--accent section__circle--big"></div>
+            </div>
+            <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+              <h5>Жужа забыла про прививку</h5>
+              Чи Хуа Хуа Жужу чуть забыла, что нужно сделать прививку перед получением документов на выезд в Италию. Лекси ей вовремя напомнила и подсказала ближайшую вереринарную клинику с хорошими специалистами по малым породам собак.
+            </div>
+          </section>
+        </div>
+        <div class="mdl-layout__tab-panel" id="stories">
+          <section class="section--center mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--12-col">
+              <div class="mdl-card mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__title">
+                  <div class="mdl-card__title-text">
+                    Лабрадор, кобель, 4 года - ДТП, открытый перелом правой передней лапы, рваные раны кожного покрова
+                  </div>
+                </div>
+                <div class="mdl-card__supporting-table">
+                  <div class="table-responsive">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="margin: 0 auto;">
+                      <thead>
+                        <tr>
+                          <th class="mdl-data-table__cell--non-numeric">Процедура</th>
+                          <th>Кол-во</th>
+                          <th class="mdl-data-table__cell--non-numeric">Цена</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Первичный прием</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 500</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Рентген конечности, рентген грудной клетки (цифровой с записью на диск)</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 450</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Ультразвуковое обследование для исключения внутреннего кровотечения и разрыва органов:</td>
+                          <td></td>
+                          <td class="mdl-data-table__cell--non-numeric"></td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- УЗИ брюшной полости</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 1,200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- УЗИ малого таза</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 600</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Помещение в стационар интенсивной терапии: ₽2,700/сут</td>
+                          <td>4</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 10,800</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Интенсивная терапия без стоимости препаратов:</td>
+                          <td></td>
+                          <td class="mdl-data-table__cell--non-numeric"></td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- установка внутривенного катетера (шт.)</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 400</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- инъекции внутримышечные (шт.)</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 100</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- инъекции подкожные (шт.)</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 100</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- инъекции внутривенные при установленном порте (шт.)</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- внутривенные инфузии на инфузомате (час)</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 1,200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- оксигенация/кислородная камера (час)</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Первичная обработка и ушивание ран:</td>
+                          <td></td>
+                          <td class="mdl-data-table__cell--non-numeric"></td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- обработка: ₽500 - ₽1,000</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 500</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- наложение кожно-мышечных швов (шт.)</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 100</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Наложение бинтовой повязки: ₽200 - ₽500</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Остеосинтез сложного перелома правой плечевой кости с использованием пластины</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 10,500</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Забор крови и мочи для общего мониторинга состояния:</td>
+                          <td></td>
+                          <td class="mdl-data-table__cell--non-numeric"></td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- забор крови</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- общий клинический анализ крови</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 800</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- биохимический анализ крови минимум 12 показателей</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 2,000</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">&emsp;&emsp;- общий анализ мочи</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 350</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Снятие швов: ₽200 - ₽400</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Снятие внутривенного катетера</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 150</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric"></td>
+                          <td></td>
+                          <td class="mdl-data-table__cell--non-numeric"></td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric"><b>ИТОГО</b></td>
+                          <td>100%</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 30,750</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric"><b>ЛЕКСИ ВОЗМЕСТИТ</b></td>
+                          <td>79%</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 24,200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric"><b>ОСТАТОК</b></td>
+                          <td>21%</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 6,550</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                &emsp;&emsp;
+              </div>
+
+              <div class="mdl-card mdl-cell mdl-cell--12-col">
+                <div class="mdl-card__title">
+                  <div class="mdl-card__title-text">
+                    Кошка, 2 года - Подозрение на пиометру, состояние средней тяжести, обезвоживание, отказ от еды
+                  </div>
+                </div>
+                <div class="mdl-card__supporting-table">
+                  <div class="table-responsive">
+                    <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" style="margin: 0 auto;">
+                      <thead>
+                        <tr>
+                          <th class="mdl-data-table__cell--non-numeric">Процедура</th>
+                          <th>Кол-во</th>
+                          <th class="mdl-data-table__cell--non-numeric">Цена</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Первичный прием</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 500</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Ультразвуковое исследование брюшной полости</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 1,200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Забор крови</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Общий клинический анализ крови</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 800</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Биохимический анализ крови на 12 показателей</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 2,000</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Овариогистерэктомия при пиометре</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 6,500</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Установка внутривенного катетера</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 400</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Инъекции внутривенные при установленном катетере</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Инъекции подкожные</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 100</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Инъекции внутримышечные</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 100</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Инфузия на инфузомате (час)</td>
+                          <td>2</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 1,200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Помещение в стационар интенсивной терапии (3 категория, состояние сред. тяжести): ₽1,500/сут</td>
+                          <td>2</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 3,000</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Снятие внутривенного катетера</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 150</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric">Снятие швов: ₽200 - ₽400</td>
+                          <td>1</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 200</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric"></td>
+                          <td></td>
+                          <td class="mdl-data-table__cell--non-numeric"></td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric"><b>ИТОГО</b></td>
+                          <td>100%</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 16,550</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric"><b>ЛЕКСИ ВОЗМЕСТИТ</b></td>
+                          <td>80%</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 13,240</td>
+                        </tr>
+                        <tr>
+                          <td class="mdl-data-table__cell--non-numeric"><b>ОСТАТОК</b></td>
+                          <td>20%</td>
+                          <td class="mdl-data-table__cell--non-numeric">₽ 3,310</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="mdl-layout__tab-panel" id="features">
+          <section class="section--center mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--12-col">
+              <h4>Правила работы Лекси</h4>
+              Основные правила работы пользоветеля с роботом Лекси 
+              <h5>Содержание</h5>
+              <ul class="toc">
+                <a href="#lorem1">Краткое описание</a>
+                <a href="#lorem2">Цена</a>
+                <a href="#lorem3">Кому помогаем?</a>
+                <a href="#lorem4">Возмещение</a>
+                <a href="#lorem5">Список расходов</a>
+                <a href="#lorem5">Исключения</a>
+              </ul>
+
+              <h5 id="lorem1">Краткое описание</h5>
+              Программа Лекси помогает заботится о домашних питомцах (собаках или кошках) и выполняет следующие действия:
+              <ul>
+                <li>Организует компенсацию по всем разумным расходам в соответствии с таблицей базовых цен на услуги ветеринаров за лечение домашнего животного в результате несчастного случая и болезни (см. список исключений), в том числе госпитализация и хирургическое вмешательство. Действует в течении 60 дней с даты обнаружения заболевания или до исчерпания лимита</li>
+                <li>Организует онлайн интернет консультация ветеринарного врача</li>
+                <li>Помогает найти клинику и записаться на прием к ветеринарному врачу</li>
+                <li>Содействует в розыске пропавшего животного через социальные сети, выплата вознаграждения за возврат</li>
+              </ul>
+
+              <h5 id="lorem2">Цена</h5>
+              <p>
+                Минимальная цена в месяц 333 руб. в месяц. (для кошек 289 рублей/месяц) Можно ли платить за месяц или только за весь период - квартал?
+              </p>
+
+              <h5 id="lorem3">Кому помогаем?</h5>
+              <p>
+                <b>Объект:</b> Собака и/или кошка любой породы, возраст с 4 недель до 8 лет.
+              </p>
+              <p> 
+                <b>Обязательное условие:</b> фотография животного и владельца.
+              </p>
+              <p>               
+                <b>Исключения:</b> собаки бойцовых пород, собаки используемые для бизнеса, а также служебные.
+              </p>
+              <h5 id="lorem4">Возмещение</h5>
+              <p>
+                <b>Сумма возмещения:</b> не более 30 т.р. за 3 месяца
+              </p>
+              <p>
+                Возмещение по всем разумным расходам в соответствии с таблицей базовых цен на услуги ветеринаров за лечение домашнего животного в результате несчастного случая и болезни (см. список исключений), в том числе госпитализация и хирургическое вмешательство. Действует в течении 60 дней с даты обнаружения заболевания или до исчерпания лимита.
+              </p>
+              <h5 id="lorem5">Список расходов</h5>
+              <p>
+                Возмещение производится в соответствии со следующим списком:
+              </p>
+              <h5>Прием</h5>
+              <p><b>Услуги</b></p>
+              <ul>
+                <li>
+                  Прием вет.врача (осмотр, предварительный диагноз, рекомендации) - 1 животное: ₽520
+                </li>
+                <li>
+                  Прием ведущего терапевта - 1 животное: ₽960
+                </li>
+                <li>
+                  Прием кардиолога, невропатолога - 1 животное: ₽1,200
+                </li>
+                <li>
+                  Прием травматолога - 1 животное: ₽960
+                </li>
+                <li>
+                  Прием инфекциониста - 1 животное: ₽960
+                </li>
+                <li>
+                  Консилиум (минимум три врача) - 1 животное: ₽2,400
+                </li>
+              </ul>
+              <p><b>Фиксация</b></p>
+              <ul>
+                <li>
+                  Фиксация неагрессивного животного ассистентом - 1 животное: ₽80
+                </li>
+                <li>
+                  Фиксация агрессивного животного с привлечением двух и более сотрудников или использованием дополнительных средств для выполнения манипуляций (у собак при наличии поводка, ошейника, намордника) - 1 животное: ₽480
+                </li>
+                <li>
+                  Фиксация крупного агрессивного животного с привлечением двух и более сотрудников или использованием дополнительных средств для выполнения манипуляций (у собак при наличии поводка, ошейника, намордника) - 1 животное: ₽640
+                </li>
+                <li>
+                  Фиксация неагресивного животного ассистентом при рентгенографическом исследовании - 1 снимок: ₽320
+                </li>
+              </ul>
+              <h5>Прием</h5>
+              <p><b>Услуги</b></p>
+              <p>Инъекции, инфузионная терапия</p>
+              <ul>
+                <li>
+                  Внутримышечные, подкожные (включая шприц) - 1 инъекция: ₽96
+                </li>
+                <li>
+                  Внутривенные (включая шприц) - 1 инъекция: ₽240
+                </li>
+                <li>
+                  Внутривенные повышенной сложности (кошки, карликовые собаки, коротколапые собаки) (включая шприц) - 1 инъекция: ₽400
+                </li>
+                <li>
+                  Внутрисуставные инъекции (включая шприц) - 1 инъекция: ₽400
+                </li>
+                <li>
+                  Субконъюктивальные (включая шприц) - 1 инъекция: ₽560
+                </li>
+                <li>
+                  Установка внутривенного катетера (включая катетер) - 1 животное: ₽360
+                </li>
+                <li>
+                  Установка внутривенного катетера повышенной сложности (кошки, карликовые собаки, коротколапые собаки) (включая катетер) - 1 животное: ₽360
+                </li>
+                <li>
+                  Установка центрального катетера - 1 животное: ₽800
+                </li>
+                <li>
+                  Обслуживание катетера - 1 животное: ₽80
+                </li>
+                <li>
+                  Введение препарата в внутривенный катетер (включая шприц) - 1 инъекция: ₽80
+                </li>
+                <li>
+                  Снятие внутривенного катетера - 1 животное: ₽160
+                </li>
+                <li>
+                  Внутривенная, подкожная инфузия (включая систему) - 1 час: ₽480
+                </li>
+                <li>
+                  Внутривенная, подкожная инфузия (включая систему) - меньше 30 мин.: ₽280
+                </li>
+                <li>
+                  Внутривенная, подкожная инфузия (включая систему) - свыше 5 часов: ₽2,400
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+        <div class="mdl-layout__tab-panel" id="technology">
+          <section class="section--center mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--12-col">
+              <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                  <div class="mdl-card__supporting-text">
+                    <h4>Децентрализованная Автономная организация</h4>
+                    Сервис Лекси организован на основе Автономной Децентрализованной Организации (DAO) на платформе <a href="https://www.ethereum.org">Ethereum</a>. Данная организация управляется умным контрактом Лекси, который распоряжается деньгами организации в соответствии с Правилами. Вступая в Автономную Децентрализованную Организацию, Вы с помощью Лекси создаете свой умный контракт участника DAO и после этого этот контракт "включается" в группу контрактов организации. Лекси присылает Вам Lexi Card, номер карты - это номер вашего контракта в DAO. В вашем контракте отражается Ваш взнос в организацию и те возмещения, которые Вы получили, если воспользовались сервисом Лекси при лечении Вашего питомца.
+                  </div>
+                </div>
+              </section>
+              <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                  <div class="mdl-card__supporting-text">
+                    <h4>Умный контракт</h4>
+                    Умный контракт Лекси - это программа, которая выполняется на виртуальной машине (компьютере) Ethereum. Компьютер называется виртуальным потому, что он сам программа, которая работает одновременно сразу на многоих компьютерах в сети Интернет. Так-как таких компьютеров много и становится с каждым годом все больше и больше, то надежность виртуального компьютера Ethereum растет и именно поэтому его можно назвать "вечным" - он будет работать пока будет работать Интернет и будет хотя бы один компьютер, который использует программу Ethereum.    
+                  </div>
+                </div>
+              </section>
+              <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                  <div class="mdl-card__supporting-text">
+                    <h4>Блокчэйн</h4>
+                    Блокчэйн - это распределенная база данных, т.е. записи (данные) храняться в ней не в одном месте (на одном компьютере), а сразу на многих компьютерах в сети Интернет. Каждая запись, или в терминах Блокчэйн, транзакция, хранится  на каждом таком компьютере, транзакции объединяются в блоки, а блоки образуют Блокчэйн. Криптографические функции обеспечивают достоверность данных и, можно сказать, что если что то записано в Блокчэйн, то это отражено там на вечно и не может быть никем изменено. Именно поэтому Блокчэйн можно использовать как хранилище ценностей, включая электронные деньги.    
+                  </div>
+                </div>
+              </section>
+              <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                  <div class="mdl-card__supporting-text">
+                    <h4>Идентификация питомца</h4>
+                    Сейчас компьютеры научилися распозновать графическую информацию лучше чем человек и Лекси позьзуется последними достижениями в данной области. Лекси может "видить" Вашего питомца, определить кошка это или собака и "узнать" его, на пример, когда он придет лечится в ветеринарную клинику.    
+                  </div>
+                </div>
+              </section>
+              <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                <div class="mdl-card mdl-cell mdl-cell--12-col">
+                  <div class="mdl-card__supporting-text">
+                    <h4>Скоринг</h4>
+                    Лекси использует специальную вероятностную модель, постоенную на основе проанализированных демографии и фотографий людей и животных. Эта модель позволяет Лекси "предсказывать" возможные будущие события, например болезь опрелеленной породы питомца или нарушение Правил владельцем.     
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+        </div>
+        <div class="mdl-layout__tab-panel" id="faq">
+          <section class="section--center mdl-grid mdl-grid--no-spacing">
+            <div class="mdl-cell mdl-cell--12-col">
+              <h4>Вопросы и ответы</h4>
+              
+              <h5>Содержание</h5>
+              <ul class="toc">
+                <a href="#q1">Как можно заплатить?</a>
+                <a href="#q2">Как получить свою карту?</a>
+                <a href="#q3">Что мне делать, если мой питомец заболел?</a>
+                <a href="#q4">Как получить возмещение?</a>
+                <a href="#q5">Как скоро я получу возмещение?</a>
+                <a href="#q6">Куда придут деньги?</a>
+              </ul>
+
+              <h5 id="q1">Как можно заплатить?</h5>
+              <div>
+                <p>
+                  Заплатить можно с электронного кошелька Яндекс Деньги или с карточки 
+                </p>
+              </div>
+              <h5 id="q2">Как получить свою карту?</h5>
+              <div>
+                <p>
+                  Лекси выпустит для Вас карту сразу после получения оплаты, её можно будет сохранить как и любую фотографию на вашем смартфоне или компьютер
+                </p>
+              </div>
+              <h5 id="q3">Что мне делать, если мой питомец заболел?</h5>
+              <div>
+                <p>
+                  Нужно сразу сообщить об этом Лекси. Она поможет Вам записаться к ветеринару. Возмещение будет сделано только в том случае, если Вы это сделали до того, как обратились в клинику и воспользовались предоставленной помощью.
+                </p>
+              </div>
+              <h5 id="q4">Как получить возмещение?</h5>
+              <div>
+                <p>
+                  Для этого нужно сфотографировать вашего питомца в клинике и загрузить её в Lexi Bot. Проверьте, пожалуста, что у вас включена геолокация перед тем, как сделать фотографию. Кроме этого в клинике нужно получить документ со всеме услугами / процедурами, которые были выполенны с вашим питомцем и кассовый чек, подтверждающий факт оплаты. Всё это так же нужно загрузить в Lexi Bot. После проверки полученной информации Лекси проведет возмещение.
+                </p>
+              </div>
+              <h5 id="q5">Как скоро я получу возмещение?</h5>
+              <div>
+                <p>
+                  Обычно в день предоставления документов, но может быть и немного дольше, до 3-х дней.
+                </p>
+              </div>
+              <h5 id="q6">Куда придут деньги?</h5>
+              <div>
+                <p>
+                  На Ваш электронный кошелёк Яндекс Деньги или карту.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <footer class="mdl-mega-footer">
+          <div class="mdl-mega-footer--middle-section">
+            <div class="mdl-mega-footer--drop-down-section">
+              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer--heading">Features</h1>
+              <ul class="mdl-mega-footer--link-list">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Updates</a></li>
+              </ul>
+            </div>
+            <div class="mdl-mega-footer--drop-down-section">
+              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer--heading">Details</h1>
+              <ul class="mdl-mega-footer--link-list">
+                <li><a href="#">Spec</a></li>
+                <li><a href="#">Tools</a></li>
+                <li><a href="#">Resources</a></li>
+              </ul>
+            </div>
+            <div class="mdl-mega-footer--drop-down-section">
+              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer--heading">Technology</h1>
+              <ul class="mdl-mega-footer--link-list">
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">Patterns</a></li>
+                <li><a href="#">Usage</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contracts</a></li>
+              </ul>
+            </div>
+            <div class="mdl-mega-footer--drop-down-section">
+              <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+              <h1 class="mdl-mega-footer--heading">FAQ</h1>
+              <ul class="mdl-mega-footer--link-list">
+                <li><a href="#">Questions</a></li>
+                <li><a href="#">Answers</a></li>
+                <li><a href="#">Contact us</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="mdl-mega-footer--bottom-section">
+            <div class="mdl-logo">
+              More Information
+            </div>
+            <ul class="mdl-mega-footer--link-list">
+              <li><a href="https://developers.google.com/web/starter-kit/">Web Starter Kit</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Privacy and Terms</a></li>
+            </ul>
+          </div>
+        </footer>
+      </main>
+    </div>
+    <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/text-only/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Lexi Bot</a>
+    <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </body>
+</html>
