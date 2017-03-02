@@ -16,6 +16,7 @@
     "web3":"0.14.0",
     "elliptic-curve": "0.1.0",
     "eth-lightwallet": "^2.4.3",
-    "hooked-web3-provider": "^1.0.0"
+    "hooked-web3-provider": "^1.0.0",
+    "vhost":"3.0.2"
   }
 }

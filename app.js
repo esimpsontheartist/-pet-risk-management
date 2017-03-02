@@ -8,8 +8,13 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var api = require('./routes/api');
+var vhost = require( 'vhost' );
 
 var app = express();
+
+//Create the virtual hosts
+var lexiclub = createVirtualHost("www.lexiclub.org", express.static(path.join(__dirname, 'Lexi')));
+var lexicard = createVirtualHost("www.lexicard.org", express.static(path.join(__dirname, 'public')));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,7 +26,9 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'Lexi')));
+// app.use(express.static(path.join(__dirname, 'Lexi')));
+app.use(lexiclub);
+app.use(lexicard);
 
 app.use('/', index);
 app.use('/users', users);
