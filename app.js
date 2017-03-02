@@ -22,8 +22,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'Lexi')));
-app.use(lexiclub);
-app.use(lexicard);
 
 app.use('/', index);
 app.use('/users', users);
