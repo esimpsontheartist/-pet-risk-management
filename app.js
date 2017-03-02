@@ -13,8 +13,8 @@ var vhost = require( 'vhost' );
 var app = express();
 
 //Create the virtual hosts
-var lexiclub = createVirtualHost("www.lexiclub.org", express.static(path.join(__dirname, 'Lexi')));
-var lexicard = createVirtualHost("www.lexicard.org", express.static(path.join(__dirname, 'public')));
+var lexiclub = createVirtualHost("www.lexiclub.org", 'Lexi');
+var lexicard = createVirtualHost("www.lexicard.org", 'public');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
