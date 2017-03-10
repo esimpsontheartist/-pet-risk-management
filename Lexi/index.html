@@ -96,7 +96,7 @@
                 Все просто и безлишних формальностей:<br><br> &emsp;&emsp;- <b>90 секунд</b> на получение LexiCard <br> &emsp;&emsp;- <b>90 минут</b> на получение компенсации
               </div>
               <div class="mdl-card__actions">
-                <a href="#conditions" class="mdl-button">Узнать больше</a>
+                <a href="#conditions" class="mdl-button" id="buttonVideo">Узнать больше</a>
               </div>
             </div>
           </section>
@@ -781,7 +781,7 @@
     </div>
     <a href="https://telegram.me/RegaPetBot" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">Lexi Bot</a>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <script>
+    <script type="text/javascript">
       var buttonA = document.getElementById('buttonA');
       var buttonB = document.getElementById('buttonB');
       var buttonC = document.getElementById('buttonC');
@@ -801,6 +801,18 @@
       componentHandler.upgradeElement(buttonA);
       componentHandler.upgradeElement(buttonC);
       componentHandler.upgradeElement(buttonADD);
+    </script>
+    <script type="text/javascript">
+      var buttonVideo = document.getElementById('buttonVideo');
+      var newwindow;
+      function createPop(url, name) {    
+        newwindow = window.open(url,name,'width=1024,height=768,toolbar=0,menubar=0,location=0');  
+        if (window.focus) {newwindow.focus()}
+      }
+      buttonVideo.onclick = function () {
+        createPop("lexivideo.html", "Lexi Screen Cast")
+      };
+      componentHandler.upgradeElement(buttonVideo);
     </script>
   </body>
 </html>
