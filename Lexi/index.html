@@ -814,5 +814,22 @@
       };
       componentHandler.upgradeElement(buttonVideo);
     </script>
+    <script type="text/javascript">
+      var hash = window.location.hash;
+      if(hash && hash.length > 1) {
+        var menubar = document.getElementById('top');
+        for (var i = 0; i < menubar.children.length; i++) {
+          var href = menubar.children[i].getAttribute("href");
+          if(href == hash) {
+            menubar.children[i].classList.add('is-active');
+            document.getElementById(hash.substring(1)).classList.add('is-active');
+          }
+          else {
+            menubar.children[i].classList.remove('is-active');
+            document.getElementById(href.substring(1)).classList.remove('is-active');
+          }
+        }
+      } 
+    </script>
   </body>
 </html>
