@@ -109,7 +109,7 @@
                 </div>
                 <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
                   <h5>Сколько стоит?</h5>
-                  <p>Стоимость контракта LexiCard Standard в месяц: 333₽ - собака, 289₽ - кошка <a href="#">внести</a>.</p>
+                  <p>Стоимость контракта LexiCard Standard в месяц: 333₽ - собака, 289₽ - кошка <a href="https://telegram.me/LexiBot">внести</a>.</p>
                 </div>
                 <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
                   <div class="section__circle-container__circle mdl-color--primary"></div>
@@ -124,7 +124,7 @@
                 </div>
                 <div class="section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
                   <h5>О ком заботимся?</h5>
-                   <p>Собака или кошка любой породы, возраст от 4 недель до 8 лет <a href="#">есть исключения</a>.</p>
+                   <p>Собака или кошка любой породы, возраст от 4 недель до 8 лет <a href="#lorem4" id="buttonF">есть исключения</a>.</p>
                 </div>
                 <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
                   <div class="section__circle-container__circle mdl-color--primary"></div>
@@ -786,6 +786,7 @@
       var buttonB = document.getElementById('buttonB');
       var buttonC = document.getElementById('buttonC');
       var buttonD = document.getElementById('buttonD');
+      var buttonF = document.getElementById('buttonF');
       var buttonADD = document.getElementById('add');
       buttonA.onclick = function () {
         buttonB.click();
@@ -795,11 +796,16 @@
         buttonD.click();
         document.querySelector('.mdl-layout__content').scrollTop = 0;
       };
+      buttonF.onclick = function () {
+        buttonD.click();
+        document.querySelector('.mdl-layout__content').scrollTop = 0;
+      };
       buttonADD.onclick = function () {
         window.open('https://www.facebook.com/lexiclub');
       };
       componentHandler.upgradeElement(buttonA);
       componentHandler.upgradeElement(buttonC);
+      componentHandler.upgradeElement(buttonF);
       componentHandler.upgradeElement(buttonADD);
     </script>
     <script type="text/javascript">
