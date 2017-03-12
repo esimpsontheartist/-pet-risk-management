@@ -835,7 +835,27 @@
             document.getElementById(href.substring(1)).classList.remove('is-active');
           }
         }
-      } 
+      }
+      var search = window.location.search;
+      if(search && search.length > 1) {
+        var options = search.substring(1).split("=");
+        var messenger = "https://telegram.me/LexiBot";
+        var buttonGo = document.getElementById('view-source');
+        if(options && options.length > 1) {
+          for (var i = 0; i < options.length; i = i + 2) {
+            if(options[i] == 'm' || options[i] == 'M') {
+              if(options[i+1] == "Telegram" || options[i+1] == "telegram") {
+                messenger = "https://telegram.me/LexiBot";
+              }
+              else if (options[i+1] == "Facebook" || options[i+1] == "facebook") {
+                messenger = "https://www.facebook.com/messages/t/lexiclub";
+              }
+            }
+          }
+        }
+        buttonGo.setAttribute("href", messenger);
+        componentHandler.upgradeElement(buttonGo);
+      }
     </script>
   </body>
 </html>
